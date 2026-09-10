@@ -1,0 +1,25 @@
+Key,en,de
+general,General,Allgemeines
+language,Language,Sprache
+theme,Theme,Erscheinungsbild
+dark,Dark,Dunkel
+light,Light,Hell
+system,System,System
+game_renderer,Game Renderer,Spiel-Renderer
+scale,Scale,Skalierung
+automatic,Automatic,Automatisch
+scale_factor,Scale Factor,Skalierungs-Faktor
+min_edge_distance,Min. Edge Distance,Min. Abstand zum Rand
+world,World,Welt
+reset,Reset,Zurücksetzen
+width,Width,Breite
+height,Height,Höhe
+diamonds,Diamonds,Diamanten
+monster,Monster,Monster
+bombs,Bombs,Bomben
+rocks,Rocks,Steine
+audio,Audio,Audio
+master_volume,Master Volume,Gesamtlautstärke
+music_volume,Music Volume,Musik-Lautstärke
+sfx_volume,SFX Volume,SFX-Lautstärke
+theme,Theme,Farbschema

@@ -1,0 +1,9 @@
+Key,en,de
+game_over,Game Over,Game Over
+won,Won Game!,Gewonnen!
+death.monster_catches_player,Player was eaten,Spieler wurde gefressen
+death.player_walks_into_monster,Player ran into trouble,Spieler hat Streit gesucht
+death.rock_hits_player,Player was squashed by a rock,Spieler wurde erschlagen
+death.explosion,Player exploded,Spieler ist explodiert
+win.all_diamonds,All {diamonds} diamonds collected!,Alle {diamonds} Diamanten gesammelt!
+diamondCount,Diamonds: {diamondCount} / {diamondsInGame},Diamanten: {diamondCount} / {diamondsInGame}
