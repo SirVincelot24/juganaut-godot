@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Juganaut-Godot"
+config/name="Juganaut"
 run/main_scene="uid://e44s83b1qdo4"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
@@ -25,6 +25,7 @@ ThemeManager="*uid://2yr7dtmreb01"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
