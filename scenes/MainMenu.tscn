@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://e44s83b1qdo4"]
+
+[ext_resource type="Theme" uid="uid://crsft51r0vgyc" path="res://themes/mainTheme.tres" id="1_h7a2f"]
+[ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/dark_button.gd" id="2_eiy7p"]
+
+[node name="Control" type="Control" unique_id=1272733835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h7a2f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=724782224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1618503437]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "app_name"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=350605826]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "start_game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1513830552]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SettingsButton"
+text = "settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=98152750]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "quit"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer" unique_id=162588925]
+visible = false
+layout_mode = 2
+text = "is dark"
+script = ExtResource("2_eiy7p")
