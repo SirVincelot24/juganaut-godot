@@ -1,10 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://crsft51r0vgyc"]
 
-[ext_resource type="StyleBox" uid="uid://di55c7uwfr23k" path="res://themes/button.tres" id="1_mbucg"]
-
 [resource]
 Button/font_sizes/font_size = 30
-Button/styles/normal = ExtResource("1_mbucg")
 SettingsButton/base_type = &"Button"
 StartButton/base_type = &"Button"
 TitleLabel/base_type = &"Label"
