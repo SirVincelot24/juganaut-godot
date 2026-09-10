@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Juganaut-Godot"
+run/main_scene="uid://e44s83b1qdo4"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ThemeManager="*uid://2yr7dtmreb01"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="uid://crsft51r0vgyc"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/Game.de.translation", "res://localization/Game.en.translation", "res://localization/Settings.de.translation", "res://localization/Settings.en.translation", "res://localization/UI.de.translation", "res://localization/UI.en.translation")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
