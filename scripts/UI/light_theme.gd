@@ -1,5 +1,5 @@
 extends Node
-static var theme = ColorScheme.new(
+var theme = ColorScheme.new(
 Color("#3B693A"), # primary
 Color("#FFFFFF"), # onPrimary
 Color("#BCF0B5"), # primaryContainer

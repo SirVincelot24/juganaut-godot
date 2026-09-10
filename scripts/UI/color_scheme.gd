@@ -1,8 +1,8 @@
 class_name ColorScheme
 var primary: Color
 var onPrimary: Color
-static var primaryContainer: Color
-static var onPrimaryContainer: Color
+var primaryContainer: Color
+var onPrimaryContainer: Color
 var secondary: Color
 var onSecondary: Color
 var secondaryContainer: Color
