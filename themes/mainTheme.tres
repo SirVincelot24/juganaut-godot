@@ -1,9 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://crsft51r0vgyc"]
-
-[resource]
-Button/font_sizes/font_size = 30
-SettingsButton/base_type = &"Button"
-StartButton/base_type = &"Button"
-TitleLabel/base_type = &"Label"
-TitleLabel/colors/font_color = Color(1, 0, 0.5019608, 1)
-TitleLabel/font_sizes/font_size = 60

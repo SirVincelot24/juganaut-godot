@@ -32,7 +32,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it0uy"]
-bg_color = Color(0.7372549, 0.92156863, 0.94509804, 1)
+bg_color = Color(1, 0.85490197, 0.8392157, 0.9)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -46,6 +46,20 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6y4y"]
+bg_color = Color(0.7372549, 0.92156863, 0.94509804, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghbgf"]
+bg_color = Color(0.7372549, 0.92156863, 0.94509804, 0.9)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p25dn"]
 bg_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
 border_width_left = 5
 border_width_top = 5
@@ -57,13 +71,46 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghbgf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxhkq"]
 bg_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.13725491, 0.3137255, 0.14117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvjxi"]
+bg_color = Color(0.7372549, 0.9411765, 0.70980394, 0.9)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.13725491, 0.3137255, 0.14117648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fvyg"]
+bg_color = Color(0.32156864, 0.3882353, 0.30980393, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgge1"]
+bg_color = Color(0.32156864, 0.3882353, 0.30980393, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1libl"]
+bg_color = Color(0.32156864, 0.3882353, 0.30980393, 0.9)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -79,11 +126,19 @@ QuitButton/base_type = &"Button"
 QuitButton/colors/font_color = Color(0.5764706, 0, 0.039215688, 1)
 QuitButton/styles/hover = SubResource("StyleBoxFlat_qha0b")
 QuitButton/styles/normal = SubResource("StyleBoxFlat_15x4i")
+QuitButton/styles/pressed = SubResource("StyleBoxFlat_it0uy")
 SettingsButton/base_type = &"Button"
 SettingsButton/colors/font_color = Color(0.12156863, 0.3019608, 0.32156864, 1)
-SettingsButton/styles/hover = SubResource("StyleBoxFlat_it0uy")
-SettingsButton/styles/normal = SubResource("StyleBoxFlat_2gs5e")
+SettingsButton/styles/hover = SubResource("StyleBoxFlat_2gs5e")
+SettingsButton/styles/normal = SubResource("StyleBoxFlat_a6y4y")
+SettingsButton/styles/pressed = SubResource("StyleBoxFlat_ghbgf")
 StartButton/base_type = &"Button"
 StartButton/colors/font_color = Color(0.13725491, 0.3137255, 0.14117648, 1)
-StartButton/styles/hover = SubResource("StyleBoxFlat_a6y4y")
-StartButton/styles/normal = SubResource("StyleBoxFlat_ghbgf")
+StartButton/styles/hover = SubResource("StyleBoxFlat_p25dn")
+StartButton/styles/normal = SubResource("StyleBoxFlat_hxhkq")
+StartButton/styles/pressed = SubResource("StyleBoxFlat_xvjxi")
+StopButton/base_type = &"Button"
+StopButton/colors/font_color = Color(1, 1, 1, 1)
+StopButton/styles/hover = SubResource("StyleBoxFlat_4fvyg")
+StopButton/styles/normal = SubResource("StyleBoxFlat_mgge1")
+StopButton/styles/pressed = SubResource("StyleBoxFlat_1libl")

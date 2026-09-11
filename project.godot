@@ -28,10 +28,6 @@ ThemeManager="*uid://2yr7dtmreb01"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[gui]
-
-theme/custom="uid://crsft51r0vgyc"
-
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/Game.de.translation", "res://localization/Game.en.translation", "res://localization/Settings.de.translation", "res://localization/Settings.en.translation", "res://localization/UI.de.translation", "res://localization/UI.en.translation")

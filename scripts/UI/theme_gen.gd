@@ -19,16 +19,26 @@ func define_theme():
 			bg_color = color_scheme.primaryContainer,
 			corner_ = corner_radius(5)
 		})
-	var startButtonBg = inherit(normalButtonBg, {
+	var buttonBgVariations = {
+		startButtonBg = inherit(normalButtonBg, {
 			bg_color = color_scheme.primaryContainer,
 			border_color = color_scheme.onPrimaryContainer,
 			border_ = border_width(5)
-		})
-	var settingsButtonBg = inherit(normalButtonBg, {
+			}),
+		settingsButtonBg = inherit(normalButtonBg, {
 			bg_color = color_scheme.tertiaryContainer
-		})
-	var quitButtonBg = inherit(normalButtonBg, {
+		}),
+		quitButtonBg = inherit(normalButtonBg, {
 			bg_color = color_scheme.errorContainer
+		}),
+		stopButtonBg = inherit(normalButtonBg, {
+			bg_color = color_scheme.secondary
+		})
+	}
+	var button_pressed = {}
+	for entry in buttonBgVariations.keys():
+		button_pressed[entry] = inherit(buttonBgVariations[entry], {
+			bg_color = Color(buttonBgVariations[entry].bg_color, 0.9)
 		})
 	
 	define_default_font_size(default_font_size)
@@ -39,19 +49,29 @@ func define_theme():
 	})
 	define_variant_style("StartButton", "Button", {
 		font_color = color_scheme.onPrimaryContainer,
-		normal = startButtonBg,
-		hover = startButtonBg
+		normal = buttonBgVariations["startButtonBg"],
+		hover = buttonBgVariations["startButtonBg"],
+		pressed = button_pressed["startButtonBg"]
 	})
 	define_variant_style("SettingsButton", "Button", {
 		font_color = color_scheme.onTertiaryContainer,
-		normal = settingsButtonBg,
-		hover = settingsButtonBg
+		normal = buttonBgVariations["settingsButtonBg"],
+		hover = buttonBgVariations["settingsButtonBg"],
+		pressed = button_pressed["settingsButtonBg"]
 	})
 	define_variant_style("QuitButton", "Button", {
 		font_color = color_scheme.onErrorContainer,
-		normal = quitButtonBg,
-		hover = quitButtonBg
+		normal = buttonBgVariations["quitButtonBg"],
+		hover = buttonBgVariations["quitButtonBg"],
+		pressed = button_pressed["quitButtonBg"]
 	})
+	define_variant_style("StopButton", "Button", {
+		font_color = color_scheme.onSecondary,
+		normal = buttonBgVariations["stopButtonBg"],
+		hover = buttonBgVariations["stopButtonBg"],
+		pressed = button_pressed["stopButtonBg"]
+	})
+	
 	define_style("Panel", {
 		panel = stylebox_flat({
 			bg_color = color_scheme.surfaceContainer
