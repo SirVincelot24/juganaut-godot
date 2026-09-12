@@ -22,11 +22,16 @@ buses/default_bus_layout="uid://cwc6ip6viwbqa"
 [autoload]
 
 ThemeManager="*uid://2yr7dtmreb01"
+PlayerPrefs="*uid://dxnwp4c3ffj0p"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/PlayerPrefs/plugin.cfg")
 
 [internationalization]
 
