@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d18qu1suffnux" path="res://textures/menu-background.png" id="1_2wh52"]
 [ext_resource type="Script" uid="uid://c7wsncsu56o6w" path="res://scripts/UI/buttons/start.gd" id="2_ow34m"]
 [ext_resource type="AudioStream" uid="uid://byiwq5p3lhvxr" path="res://audio/music/menu_loop.wav" id="3_2wh52"]
+[ext_resource type="Script" uid="uid://b47d14ah00e7q" path="res://scripts/UI/buttons/quit.gd" id="3_ow34m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wh52"]
 texture = ExtResource("1_2wh52")
@@ -57,6 +58,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"QuitButton"
 text = "quit"
+script = ExtResource("3_ow34m")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=2109275629]
 stream = ExtResource("3_2wh52")
