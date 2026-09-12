@@ -47,6 +47,15 @@ func define_theme():
 		border_color = color_scheme.primary,
 		border_ = border_width(4)
 	})
+	var focus = stylebox_flat({
+		bg_color = Color.TRANSPARENT,
+		border_ = border_width(2),
+		border_color = color_scheme.inverseSurface,
+		corner_ = corner_radius(3),
+		corner_detail = 5,
+		expand_margins_ = expand_margins(2),
+		content_ = content_margins(4)
+	})
 	
 	var button_pressed = {}
 	for entry in buttonBgVariations.keys():
@@ -65,7 +74,8 @@ func define_theme():
 		normal = normalButtonBg,
 		hover = normalButtonBg,
 		pressed = normalButtonBg,
-		hover_pressed = normalButtonBg
+		hover_pressed = normalButtonBg,
+		focus = focus
 	})
 	define_variant_style("StartButton", "Button", {
 		font_color = color_scheme.onPrimaryContainer,
@@ -119,12 +129,17 @@ func define_theme():
 	# Containers
 	define_style("Panel", {
 		panel = stylebox_flat({
-			bg_color = color_scheme.surfaceContainer
+			bg_color = color_scheme.surfaceDim
 		})
 	})
 	define_variant_style("TitleBar", "PanelContainer", {
 		panel = stylebox_flat({
 			bg_color = color_scheme.primary
+		})
+	})
+	define_variant_style("TopBar", "PanelContainer", {
+		panel = stylebox_flat({
+			bg_color = color_scheme.surfaceContainer
 		})
 	})
 	define_style("ScrollContainer", {
@@ -147,6 +162,9 @@ func define_theme():
 	})
 	
 	# Labels
+	define_style("Label", {
+		font_color = color_scheme.onSurface
+	})
 	define_variant_style("TitleLabel", "Label", {
 		font_color = Color(1, 0, 0.5),
 		font_outline_color = Color(1, 0, 0.5),
