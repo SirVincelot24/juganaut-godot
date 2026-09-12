@@ -16,8 +16,9 @@ func setup_light_theme():
 
 func define_theme():
 	var normalButtonBg = stylebox_flat({
-			bg_color = color_scheme.primaryContainer,
-			corner_ = corner_radius(5)
+			bg_color = color_scheme.error,
+			corner_ = corner_radius(10),
+			content_margins_ = content_margins(10, 5, 10, 5)
 		})
 	var buttonBgVariations = {
 		startButtonBg = inherit(normalButtonBg, {
@@ -42,38 +43,84 @@ func define_theme():
 		})
 	
 	define_default_font_size(default_font_size)
+	
+	# Buttons
 	define_style("Button", {
-		font_color = color_scheme.error,
+		font_color = color_scheme.onSurface,
+		font_pressed_color = color_scheme.onSurface,
+		font_hover_color = color_scheme.onSurfaceVariant,
+		font_hover_pressed_color = color_scheme.onSurfaceVariant,
 		normal = normalButtonBg,
-		hover = normalButtonBg
+		hover = normalButtonBg,
+		pressed = normalButtonBg,
+		hover_pressed = normalButtonBg
 	})
 	define_variant_style("StartButton", "Button", {
 		font_color = color_scheme.onPrimaryContainer,
+		font_pressed_color = color_scheme.onPrimaryContainer,
 		normal = buttonBgVariations["startButtonBg"],
 		hover = buttonBgVariations["startButtonBg"],
 		pressed = button_pressed["startButtonBg"]
 	})
 	define_variant_style("SettingsButton", "Button", {
 		font_color = color_scheme.onTertiaryContainer,
+		font_pressed_color = color_scheme.onTertiaryContainer,
 		normal = buttonBgVariations["settingsButtonBg"],
 		hover = buttonBgVariations["settingsButtonBg"],
 		pressed = button_pressed["settingsButtonBg"]
 	})
 	define_variant_style("QuitButton", "Button", {
 		font_color = color_scheme.onErrorContainer,
+		font_presssed_color = color_scheme.onErrorContainer,
 		normal = buttonBgVariations["quitButtonBg"],
 		hover = buttonBgVariations["quitButtonBg"],
 		pressed = button_pressed["quitButtonBg"]
 	})
 	define_variant_style("StopButton", "Button", {
 		font_color = color_scheme.onSecondary,
+		font_pressed_color = color_scheme.onSecondary,
 		normal = buttonBgVariations["stopButtonBg"],
 		hover = buttonBgVariations["stopButtonBg"],
 		pressed = button_pressed["stopButtonBg"]
 	})
+	define_style("CheckButton", {
+		font_color = color_scheme.onBackground,
+		font_pressed_color = color_scheme.onBackground,
+		normal = stylebox_empty({}),
+		hover = stylebox_empty({}),
+		pressed = stylebox_empty({}),
+		hover_pressed = stylebox_empty({}),
+		button_checked_color = color_scheme.primary,
+		button_unchecked_color = color_scheme.surfaceContainerHighest
+	})
 	
+	# Containers
 	define_style("Panel", {
 		panel = stylebox_flat({
 			bg_color = color_scheme.surfaceContainer
+		})
+	})
+	define_variant_style("TitleBar", "PanelContainer", {
+		panel = stylebox_flat({
+			bg_color = color_scheme.primary
+		})
+	})
+	define_style("ScrollContainer", {
+		panel = stylebox_empty({
+			content_margins_ = content_margins(20, -1, 5, -1)
+		})
+	})
+	
+	# Labels
+	define_variant_style("TitleLabel", "Label", {
+		font_color = Color(1, 0, 0.5)
+	})
+	define_variant_style("onPrimary", "Label", {
+		font_color = color_scheme.onPrimary
+	})
+	define_variant_style("SettingsHeadline", "Label", {
+		font_color = color_scheme.onTertiaryContainer,
+		normal = stylebox_empty({
+			content_margins_ = content_margins(-1, 50, -1, 20)
 		})
 	})
