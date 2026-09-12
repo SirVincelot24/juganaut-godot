@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/buttons/dark_button.gd" id="1_05p07"]
 [ext_resource type="Script" uid="uid://d56hnuq86cdi" path="res://scripts/UI/buttons/back.gd" id="1_cr101"]
+[ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/buttons/language_select.gd" id="2_wswnh"]
 
 [node name="SettingsMenu" type="Control" unique_id=1464940150]
 layout_mode = 3
@@ -59,6 +60,10 @@ layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "general"
 
+[node name="LanguageSelect" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=572866696]
+layout_mode = 2
+script = ExtResource("2_wswnh")
+
 [node name="DarknessControl" type="CheckButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2083268754]
 layout_mode = 2
 button_pressed = true
@@ -79,3 +84,5 @@ text = "world"
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "audio"
+
+[connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]

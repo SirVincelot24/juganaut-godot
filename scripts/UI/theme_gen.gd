@@ -16,7 +16,6 @@ func setup_light_theme():
 
 func define_theme():
 	var normalButtonBg = stylebox_flat({
-			bg_color = color_scheme.error,
 			corner_ = corner_radius(10),
 			content_margins_ = content_margins(10, 5, 10, 5)
 		})
@@ -34,8 +33,21 @@ func define_theme():
 		}),
 		stopButtonBg = inherit(normalButtonBg, {
 			bg_color = color_scheme.secondary
-		})
+		}),
+		optionButton = inherit(normalButtonBg, {
+			bg_color = Color.TRANSPARENT,
+			border_ = border_width(2),
+			border_color = color_scheme.outline
+		}),
 	}
+	var almostTransparent = stylebox_flat({
+			bg_color = Color(color_scheme.onBackground, 0.1)
+		})
+	var optionButtonPressed = inherit(buttonBgVariations["optionButton"], {
+		border_color = color_scheme.primary,
+		border_ = border_width(4)
+	})
+	
 	var button_pressed = {}
 	for entry in buttonBgVariations.keys():
 		button_pressed[entry] = inherit(buttonBgVariations[entry], {
@@ -93,6 +105,14 @@ func define_theme():
 		button_checked_color = color_scheme.primary,
 		button_unchecked_color = color_scheme.surfaceContainerHighest
 	})
+	define_style("OptionButton", {
+		font_color = color_scheme.onSurface,
+		font_pressed_color = color_scheme.onSurface,
+		normal = buttonBgVariations["optionButton"],
+		hover = inherit(buttonBgVariations["optionButton"], almostTransparent),
+		pressed = optionButtonPressed,
+		hover_pressed = inherit(optionButtonPressed, almostTransparent)
+	})
 	
 	# Containers
 	define_style("Panel", {
@@ -108,6 +128,19 @@ func define_theme():
 	define_style("ScrollContainer", {
 		panel = stylebox_empty({
 			content_margins_ = content_margins(20, -1, 5, -1)
+		})
+	})
+	define_style("PopupMenu", {
+		font_color = color_scheme.onSurfaceVariant,
+		font_hover_color = color_scheme.onTertiaryContainer,
+		font_separator_color = color_scheme.onSurfaceVariant,
+		panel = inherit(normalButtonBg, {
+			bg_color = color_scheme.surfaceContainerLow,
+			border_ = border_width(1),
+			border_color = color_scheme.outline
+		}),
+		hover = inherit(normalButtonBg, {
+			bg_color = color_scheme.tertiaryContainer
 		})
 	})
 	
