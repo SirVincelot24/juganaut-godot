@@ -300,6 +300,9 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5y6xq"]
 bg_color = Color(0.23137255, 0.4117647, 0.22745098, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5n8f"]
+content_margin_top = 10.0
+
 [resource]
 default_font_size = 30
 Button/colors/font_color = Color(0.09411765, 0.11372549, 0.09019608, 1)
@@ -361,5 +364,7 @@ TitleBar/base_type = &"PanelContainer"
 TitleBar/styles/panel = SubResource("StyleBoxFlat_5y6xq")
 TitleLabel/base_type = &"Label"
 TitleLabel/colors/font_color = Color(1, 0, 0.5, 1)
+TitleLabel/font_sizes/font_size = 60
+TitleLabel/styles/normal = SubResource("StyleBoxEmpty_h5n8f")
 onPrimary/base_type = &"Label"
 onPrimary/colors/font_color = Color(1, 1, 1, 1)

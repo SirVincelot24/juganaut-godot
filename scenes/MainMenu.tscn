@@ -26,6 +26,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_2wh52")
 
+[node name="Title" type="Label" parent="." unique_id=1670939925]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_type_variation = &"TitleLabel"
+text = "app_name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=724782224]
 layout_mode = 1
 anchors_preset = 15
@@ -34,12 +48,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=1618503437]
-layout_mode = 2
-theme_type_variation = &"TitleLabel"
-text = "app_name"
-horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=350605826]
 layout_mode = 2

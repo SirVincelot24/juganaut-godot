@@ -146,7 +146,13 @@ func define_theme():
 	
 	# Labels
 	define_variant_style("TitleLabel", "Label", {
-		font_color = Color(1, 0, 0.5)
+		font_color = Color(1, 0, 0.5),
+		font_outline_color = Color(1, 0, 0.5),
+		outline_size = 5,
+		font_size = 60,
+		normal = stylebox_empty({
+			content_ = content_margins(-1, 10, -1, -1)
+		})
 	})
 	define_variant_style("onPrimary", "Label", {
 		font_color = color_scheme.onPrimary
