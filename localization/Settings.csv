@@ -4,6 +4,7 @@ language,Language,Sprache
 theme,Theme,Erscheinungsbild
 dark,Dark,Dunkel
 light,Light,Hell
+dark_mode,Dark Mode,Dunkler Modus
 system,System,System
 game_renderer,Game Renderer,Spiel-Renderer
 scale,Scale,Skalierung
@@ -22,4 +23,3 @@ audio,Audio,Audio
 master_volume,Master Volume,Gesamtlautstärke
 music_volume,Music Volume,Musik-Lautstärke
 sfx_volume,SFX Volume,SFX-Lautstärke
-theme,Theme,Farbschema
