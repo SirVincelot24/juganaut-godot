@@ -9,8 +9,13 @@ var is_dark := true
 
 func set_dark_mode(enabled: bool):
 	is_dark = enabled
+	apply_theme()
+
+func apply_theme():
 	var theme = DARK_THEME if is_dark else LIGHT_THEME
 	get_tree().root.theme = theme
+	for ui_root in get_tree().get_nodes_in_group("themed_ui"):
+		ui_root.theme = theme
 	theme_changed.emit()
 
 func toggle_theme():

@@ -91,6 +91,8 @@ func define_theme():
 	define_variant_style("StopButton", "Button", {
 		font_color = color_scheme.onSecondary,
 		font_pressed_color = color_scheme.onSecondary,
+		font_hover_color = color_scheme.surfaceDim,
+		font_hover_pressed_color = color_scheme.surfaceDim,
 		normal = buttonBgVariations["stopButtonBg"],
 		hover = buttonBgVariations["stopButtonBg"],
 		pressed = button_pressed["stopButtonBg"]
