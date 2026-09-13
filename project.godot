@@ -13,6 +13,7 @@ config_version=5
 config/name="Juganaut"
 run/main_scene="uid://e44s83b1qdo4"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/show_image=false
 config/icon="uid://bycnxmvy1b2ku"
 
 [audio]
