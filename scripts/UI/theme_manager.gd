@@ -5,6 +5,8 @@ signal theme_changed
 const LIGHT_THEME = preload("res://themes/generated/light_theme.tres")
 const DARK_THEME = preload("res://themes/generated/dark_theme.tres")
 
+var settings_scene = preload("res://scenes/settings_menu.tscn").instantiate()
+
 var is_dark := true
 
 func set_dark_mode(enabled: bool):
@@ -23,3 +25,5 @@ func toggle_theme():
 
 func _ready() -> void:
 	set_dark_mode(true)
+	get_tree().current_scene.add_sibling.call_deferred(settings_scene)
+	settings_scene.visible = false

@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wh52"]
 texture = ExtResource("1_2wh52")
 
-[node name="UI" type="Control" unique_id=1272733835]
+[node name="MainMenu" type="Control" unique_id=1272733835]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
