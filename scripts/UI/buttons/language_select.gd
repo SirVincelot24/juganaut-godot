@@ -12,6 +12,7 @@ func _ready() -> void:
 		add_item(tr(lang))
 	selected_language = PlayerPrefs.get_int("language", 0)
 	select(selected_language)
+	_item_selected(selected_language)
 
 func _item_selected(index: int):
 	selected_language = index
