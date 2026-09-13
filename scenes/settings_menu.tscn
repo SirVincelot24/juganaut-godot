@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dba1acnnlnyqw"]
 
 [ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/buttons/dark_button.gd" id="1_05p07"]
-[ext_resource type="Script" uid="uid://d56hnuq86cdi" path="res://scripts/UI/buttons/back.gd" id="1_cr101"]
+[ext_resource type="Script" uid="uid://bkiqvqjv1q6kr" path="res://scripts/UI/settings_menu.gd" id="1_lwwgp"]
 [ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/buttons/language_select.gd" id="2_wswnh"]
 
 [node name="SettingsMenu" type="Control" unique_id=1464940150]
@@ -12,6 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
+focus_behavior_recursive = 2
+script = ExtResource("1_lwwgp")
 
 [node name="Background" type="Panel" parent="." unique_id=680071124]
 layout_mode = 1
@@ -31,6 +34,7 @@ grow_vertical = 2
 
 [node name="TitleBar" type="PanelContainer" parent="VBoxContainer" unique_id=962090938]
 layout_mode = 2
+mouse_filter = 1
 theme_type_variation = &"TitleBar"
 
 [node name="Back" type="Button" parent="VBoxContainer/TitleBar" unique_id=1274558612]
@@ -39,7 +43,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_type_variation = &"SettingsButton"
 text = "back"
-script = ExtResource("1_cr101")
 
 [node name="SettingsTitle" type="Label" parent="VBoxContainer/TitleBar" unique_id=1090065647]
 layout_mode = 2
@@ -86,4 +89,5 @@ layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "audio"
 
+[connection signal="pressed" from="VBoxContainer/TitleBar/Back" to="." method="_on_click_back"]
 [connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]
