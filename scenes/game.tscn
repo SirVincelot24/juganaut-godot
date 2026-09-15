@@ -63,3 +63,4 @@ script = ExtResource("2_yqjtg")
 layout_mode = 2
 size_flags_horizontal = 8
 text = "diamondCount"
+horizontal_alignment = 2

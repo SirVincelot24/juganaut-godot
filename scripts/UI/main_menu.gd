@@ -12,3 +12,4 @@ func update_background():
 
 func _ready() -> void:
 	get_viewport().size_changed.connect(update_background)
+	update_background()
