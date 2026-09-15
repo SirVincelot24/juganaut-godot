@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e44s83b1qdo4"]
 
 [ext_resource type="Texture2D" uid="uid://d18qu1suffnux" path="res://textures/menu-background.png" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://d4hssf84dx6tx" path="res://scripts/UI/main_menu.gd" id="1_826wr"]
 [ext_resource type="Script" uid="uid://c7wsncsu56o6w" path="res://scripts/UI/buttons/start.gd" id="2_ow34m"]
 [ext_resource type="AudioStream" uid="uid://byiwq5p3lhvxr" path="res://audio/music/menu_loop.wav" id="3_2wh52"]
 [ext_resource type="Script" uid="uid://bwtcds2ymeuon" path="res://scripts/UI/buttons/settings.gd" id="3_l72w3"]
@@ -16,8 +17,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_826wr")
 
-[node name="Panel" type="Panel" parent="." unique_id=1833618888]
+[node name="Background" type="Panel" parent="." unique_id=1833618888]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
