@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bm6str7jj6mkt" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://c53toaarinani" path="res://audio/music/main_loop.wav" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dtrqkrbtuigau" path="res://scripts/UI/buttons/stop.gd" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://d2hov3ypap6o4" path="res://textures/cat.png" id="4_iywne"]
+[ext_resource type="Script" uid="uid://ck0u2dyk8xj5w" path="res://scripts/BL/Player.gd" id="5_p57ef"]
 
 [node name="Game" type="Node2D" unique_id=252788408]
 script = ExtResource("1_lbhrr")
@@ -64,3 +66,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "diamondCount"
 horizontal_alignment = 2
+
+[node name="Cat" type="Sprite2D" parent="." unique_id=1953060486]
+position = Vector2(476, 511)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_iywne")
+script = ExtResource("5_p57ef")
