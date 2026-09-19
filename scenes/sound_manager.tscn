@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b7yts66cdvpl1"]
+
+[ext_resource type="Script" uid="uid://ctca3twlo7na7" path="res://scripts/sound_manager.gd" id="1_shlr6"]
+[ext_resource type="AudioStream" uid="uid://2ynive46nc2u" path="res://audio/sfx/random_crisp.tres" id="2_5lwbd"]
+[ext_resource type="AudioStream" uid="uid://tsfocg8p5dp0" path="res://audio/sfx/collect_diamond_sfx.wav" id="3_ro3ww"]
+
+[node name="SoundManager" type="Node" unique_id=1228357000]
+script = ExtResource("1_shlr6")
+
+[node name="Crisp" type="AudioStreamPlayer" parent="." unique_id=440951036]
+stream = ExtResource("2_5lwbd")
+max_polyphony = 4
+bus = &"SFX"
+playback_type = 2
+
+[node name="CollectDiamond" type="AudioStreamPlayer" parent="." unique_id=723260037]
+stream = ExtResource("3_ro3ww")
+max_polyphony = 4
+bus = &"SFX"
+playback_type = 2

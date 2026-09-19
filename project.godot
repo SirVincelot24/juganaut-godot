@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://cwc6ip6viwbqa"
 
 ThemeManager="*uid://2yr7dtmreb01"
 PlayerPrefs="*uid://dxnwp4c3ffj0p"
+SoundManager="*uid://b7yts66cdvpl1"
 
 [display]
 
