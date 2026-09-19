@@ -29,7 +29,7 @@ func request_move(pawn, direction: Vector2i):
 		Pawn.CellType.DIAMOND:
 			set_cell(cell_target, pawn.type, Vector2i.ZERO)
 			set_cell(cell_start, -1, Vector2i.ZERO)
-			SoundManager.play_sound("collect_diamond")
+			$"/root/Game".collect_diamond()
 			return map_to_local(cell_target)
 		_:
 			var target_pawn = get_cell_pawn(cell_target, cell_tile_id)

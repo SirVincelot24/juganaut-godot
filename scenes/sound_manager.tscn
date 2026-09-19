@@ -11,10 +11,8 @@ script = ExtResource("1_shlr6")
 stream = ExtResource("2_5lwbd")
 max_polyphony = 4
 bus = &"SFX"
-playback_type = 2
 
 [node name="CollectDiamond" type="AudioStreamPlayer" parent="." unique_id=723260037]
 stream = ExtResource("3_ro3ww")
 max_polyphony = 4
 bus = &"SFX"
-playback_type = 2

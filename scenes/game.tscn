@@ -69,6 +69,66 @@ size_flags_horizontal = 8
 text = "diamondCount"
 horizontal_alignment = 2
 
+[node name="WonGame" type="VBoxContainer" parent="UI/Control" unique_id=2075882674]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -55.0
+offset_right = 154.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.5235988
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="UI/Control/WonGame" unique_id=1117640804]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "won"
+
+[node name="Description" type="Label" parent="UI/Control/WonGame" unique_id=123159467]
+layout_mode = 2
+text = "reason"
+
+[node name="GameOver" type="VBoxContainer" parent="UI/Control" unique_id=273479789]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -55.0
+offset_right = 154.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.5235988
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="UI/Control/GameOver" unique_id=280742321]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "game_over"
+
+[node name="Description" type="Label" parent="UI/Control/GameOver" unique_id=210050773]
+layout_mode = 2
+text = "reason"
+
 [node name="Grid" type="TileMapLayer" parent="." unique_id=937100693]
 position = Vector2(0, 30)
 scale = Vector2(0.1, 0.1)
@@ -95,3 +155,9 @@ position = Vector2(1420, 1420)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("7_u5sy4")
 type = 2
+
+[node name="Diamond" parent="Grid" unique_id=658203067 instance=ExtResource("6_p57ef")]
+position = Vector2(1780, 1420)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("7_u5sy4")
+type = 4
