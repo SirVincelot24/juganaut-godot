@@ -23,6 +23,7 @@ func update_diamond_label():
 	 diamondCount = collected_diamonds})
 
 func win_game(reason: String):
+	SoundManager.play_sound("win")
 	won_game_desc.get_parent().show()
 	match reason:
 		"all_diamonds":
@@ -31,6 +32,7 @@ func win_game(reason: String):
 			won_game_desc.text = tr("win." + reason)
 
 func game_over(reason: String):
+	SoundManager.play_sound("game_over")
 	game_over_desc.get_parent().show()
 	match reason:
 		_:
