@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jo54a07givov"]
+
+[ext_resource type="Script" uid="uid://b6w3b61nb5gjl" path="res://scripts/BL/grid/walker.gd" id="1_agfs1"]
+
+[node name="Character" type="Node2D" unique_id=913245787]
+z_index = 1
+position = Vector2(32, 32)
+script = ExtResource("1_agfs1")
+metadata/_custom_type_script = "uid://e7732qj53cuo"
+
+[node name="Pivot" type="Marker2D" parent="." unique_id=839187364]
