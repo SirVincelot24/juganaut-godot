@@ -10,6 +10,7 @@ var diamonds_in_game = 1
 func _ready() -> void:
 	ThemeManager.apply_theme()
 	update_diamond_label()
+	SoundManager.play_music("main_loop")
 
 func collect_diamond():
 	collected_diamonds += 1

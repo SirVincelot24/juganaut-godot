@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://tsfocg8p5dp0" path="res://audio/sfx/collect_diamond_sfx.wav" id="3_ro3ww"]
 [ext_resource type="AudioStream" uid="uid://bsljnbr45dbas" path="res://audio/sfx/win_game_sfx.wav" id="4_5lwbd"]
 [ext_resource type="AudioStream" uid="uid://ca0dmag7vys2a" path="res://audio/sfx/lose_game_sfx.wav" id="5_ro3ww"]
+[ext_resource type="AudioStream" uid="uid://c53toaarinani" path="res://audio/music/main_loop.wav" id="6_v1pt3"]
 
 [node name="SoundManager" type="Node" unique_id=1228357000]
 script = ExtResource("1_shlr6")
@@ -28,3 +29,8 @@ bus = &"SFX"
 stream = ExtResource("5_ro3ww")
 max_polyphony = 4
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=863143449]
+stream = ExtResource("6_v1pt3")
+autoplay = true
+bus = &"Music"

@@ -13,3 +13,4 @@ func update_background():
 func _ready() -> void:
 	get_viewport().size_changed.connect(update_background)
 	update_background()
+	SoundManager.play_music("menu_loop")

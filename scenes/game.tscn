@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://mlvkhbd0x5f3"]
 
 [ext_resource type="Script" uid="uid://bm6str7jj6mkt" path="res://scripts/game.gd" id="1_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://c53toaarinani" path="res://audio/music/main_loop.wav" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dtrqkrbtuigau" path="res://scripts/UI/buttons/stop.gd" id="2_yqjtg"]
 [ext_resource type="TileSet" uid="uid://dqblh7oy70qbd" path="res://tiles/grid_tiles.tres" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://bslvuad7i0m1y" path="res://scripts/BL/grid/grid.gd" id="5_iywne"]
@@ -10,11 +9,6 @@
 
 [node name="Game" type="Node2D" unique_id=252788408]
 script = ExtResource("1_lbhrr")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=299872494]
-stream = ExtResource("1_uwrxv")
-autoplay = true
-bus = &"Music"
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1510464131]
 layer = -1

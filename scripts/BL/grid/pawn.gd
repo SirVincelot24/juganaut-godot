@@ -16,7 +16,6 @@ var active = true: set = set_active
 
 func set_active(value):
 	active = value
-	print(value,", ", self)
 	process_mode = Node.PROCESS_MODE_INHERIT if value else PROCESS_MODE_DISABLED 
 	set_process(value)
 	set_process_input(value)
