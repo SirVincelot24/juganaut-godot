@@ -5,6 +5,7 @@ var diamonds_in_game = 1
 @onready var diamond_label = $UI/Control/TopBar/DiamondCount
 @onready var won_game_desc = $UI/Control/WonGame/Description
 @onready var game_over_desc = $UI/Control/GameOver/Description
+@onready var grid = $Grid
 
 func _ready() -> void:
 	ThemeManager.apply_theme()
@@ -24,6 +25,7 @@ func update_diamond_label():
 
 func win_game(reason: String):
 	SoundManager.play_sound("win")
+	set_running(false)
 	won_game_desc.get_parent().show()
 	match reason:
 		"all_diamonds":
@@ -37,3 +39,7 @@ func game_over(reason: String):
 	match reason:
 		_:
 			game_over_desc.text = tr("death." + reason)
+
+func set_running(value: bool) -> void:
+	for pawn in grid.get_children():
+		pawn.active = value
