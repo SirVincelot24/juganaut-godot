@@ -1,6 +1,9 @@
 extends TileMapLayer
 
+@export var max_size = Vector2i(10, 10)
+
 func _ready():
+	set_process(true)
 	for child in get_children():
 		set_cell(local_to_map(child.position), child.type, Vector2i.ZERO)
 
@@ -14,6 +17,9 @@ func get_cell_pawn(cell, type = Pawn.CellType.PLAYER):
 func request_move(pawn, direction: Vector2i):
 	var cell_start = local_to_map(pawn.position)
 	var cell_target = cell_start + direction
+	if !cell_target.x in range(0, max_size.x + 1) or !cell_target.y  in range(0, max_size.y + 1):
+		#print("OOB:", cell_target)
+		return
 	
 	var cell_tile_id = get_cell_source_id(cell_target)
 	match cell_tile_id:
