@@ -37,6 +37,9 @@ func request_move(pawn, direction: Vector2i):
 			set_cell(cell_start, -1, Vector2i.ZERO)
 			$"/root/Game".collect_diamond()
 			return map_to_local(cell_target)
+		Pawn.CellType.MONSTER:
+			$/root/Game.game_over("player_walks_into_monster")
+			set_cell(cell_start, -1, Vector2i.ZERO)
 		_:
 			var target_pawn = get_cell_pawn(cell_target, cell_tile_id)
 			print("Cell %s contains %s" % [cell_target, target_pawn.name])
