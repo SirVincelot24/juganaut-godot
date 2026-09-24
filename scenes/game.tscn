@@ -130,7 +130,7 @@ layout_mode = 2
 text = "reason"
 
 [node name="Grid" type="TileMapLayer" parent="." unique_id=937100693]
-position = Vector2(0, 30)
+position = Vector2(0, 50)
 scale = Vector2(0.1, 0.1)
 tile_set = ExtResource("4_lbhrr")
 script = ExtResource("5_iywne")
