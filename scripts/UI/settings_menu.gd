@@ -9,3 +9,7 @@ func _input(event: InputEvent) -> void:
 func _on_click_back() -> void:
 	$/root/SettingsMenu.hide()
 	$/root/MainMenu.show()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_on_click_back()
