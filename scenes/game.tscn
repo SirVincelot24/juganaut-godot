@@ -155,3 +155,6 @@ position = Vector2(1780, 1420)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("7_u5sy4")
 type = 4
+
+[connection signal="game_over_signal" from="." to="Grid" method="game_over"]
+[connection signal="game_over_signal" from="." to="Grid/Player" method="on_game_over"]

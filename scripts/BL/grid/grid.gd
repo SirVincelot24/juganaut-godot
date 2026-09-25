@@ -2,6 +2,9 @@ extends TileMapLayer
 
 @export var max_size = Vector2i(10, 10)
 
+func game_over(reason: String):
+	set_process(false)
+
 func _ready():
 	set_process(true)
 	for child in get_children():

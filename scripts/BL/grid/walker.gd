@@ -6,6 +6,9 @@ var isTouch = false
 var walk_animation_time = .5
 var touchPos
 
+func on_game_over(reason: String):
+	queue_free()
+
 func _ready() -> void:
 	grid_size = parent.tile_set.tile_size.x
 	isTouch = DisplayServer.is_touchscreen_available()

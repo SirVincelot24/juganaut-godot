@@ -7,6 +7,8 @@ var diamonds_in_game = 1
 @onready var game_over_desc = $UI/Control/GameOver/Description
 @onready var grid = $Grid
 
+signal game_over_signal(reason: String)
+
 func _ready() -> void:
 	ThemeManager.apply_theme()
 	update_diamond_label()
@@ -39,6 +41,7 @@ func game_over(reason: String):
 	SoundManager.stop_all()
 	SoundManager.play_sound("game_over")
 	game_over_desc.get_parent().show()
+	game_over_signal.emit(reason)
 	match reason:
 		_:
 			game_over_desc.text = tr("death." + reason)
