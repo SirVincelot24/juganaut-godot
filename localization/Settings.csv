@@ -13,6 +13,7 @@ scale,Scale,Skalierung
 automatic,Automatic,Automatisch
 scale_factor,Scale Factor,Skalierungs-Faktor
 min_edge_distance,Min. Edge Distance,Min. Abstand zum Rand
+apply,Apply,Anwenden
 world,World,Welt
 reset,Reset,Zurücksetzen
 width,Width,Breite

@@ -3,6 +3,8 @@ extends OptionButton
 var langs: Array = ["system", ""]
 var selected_language = 0
 
+signal translation_changed
+
 func _ready() -> void:
 	langs.append_array(TranslationServer.get_loaded_locales())
 	print(langs)
@@ -15,6 +17,7 @@ func _ready() -> void:
 	_item_selected(selected_language)
 
 func _item_selected(index: int):
+	translation_changed.emit()
 	selected_language = index
 	if selected_language == 0:
 		TranslationServer.set_locale(OS.get_locale_language())
