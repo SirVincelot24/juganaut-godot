@@ -10,6 +10,23 @@ enum CellType {
 	BOMB,
 }
 
+static func type_to_string(type: CellType) -> String:
+	match type:
+		CellType.PLAYER:
+			return "PLAYER"
+		CellType.ROCK:
+			return "ROCK"
+		CellType.DIRT:
+			return "DIRT"
+		CellType.MONSTER:
+			return "MONSTER"
+		CellType.DIAMOND:
+			return "DIAMOND"
+		CellType.BOMB:
+			return "BOMB"
+		_:
+			return ""
+
 @export var type: CellType = CellType.PLAYER
 
 var active = true: set = set_active
