@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mlvkhbd0x5f3"]
 
 [ext_resource type="Script" uid="uid://bm6str7jj6mkt" path="res://scripts/game.gd" id="1_lbhrr"]
+[ext_resource type="Script" uid="uid://dvivwmws635p4" path="res://scripts/UI/safe_margin_container.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://dtrqkrbtuigau" path="res://scripts/UI/buttons/stop.gd" id="2_yqjtg"]
 [ext_resource type="TileSet" uid="uid://dqblh7oy70qbd" path="res://tiles/grid_tiles.tres" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://bslvuad7i0m1y" path="res://scripts/BL/grid/grid.gd" id="5_iywne"]
@@ -48,14 +49,19 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 theme_type_variation = &"TopBar"
 
-[node name="Stop" type="Button" parent="UI/Control/TopBar" unique_id=1161277423]
+[node name="SafeMarginContainer" type="MarginContainer" parent="UI/Control/TopBar" unique_id=735202312]
+layout_mode = 2
+script = ExtResource("2_iywne")
+metadata/_custom_type_script = "uid://dvivwmws635p4"
+
+[node name="Stop" type="Button" parent="UI/Control/TopBar/SafeMarginContainer" unique_id=1161277423]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_type_variation = &"StopButton"
 text = "stop"
 script = ExtResource("2_yqjtg")
 
-[node name="DiamondCount" type="Label" parent="UI/Control/TopBar" unique_id=530739846]
+[node name="DiamondCount" type="Label" parent="UI/Control/TopBar/SafeMarginContainer" unique_id=530739846]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "diamondCount"

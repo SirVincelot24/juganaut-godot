@@ -2,7 +2,7 @@ extends Node2D
 
 var collected_diamonds = 0
 var diamonds_in_game = 1
-@onready var diamond_label = $UI/Control/TopBar/DiamondCount
+@onready var diamond_label = $UI/Control/TopBar/SafeMarginContainer/DiamondCount
 @onready var won_game_desc = $UI/Control/WonGame/Description
 @onready var game_over_desc = $UI/Control/GameOver/Description
 @onready var grid = $Grid

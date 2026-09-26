@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/buttons/dark_button.gd" id="1_05p07"]
 [ext_resource type="Script" uid="uid://bkiqvqjv1q6kr" path="res://scripts/UI/settings_menu.gd" id="1_lwwgp"]
+[ext_resource type="Script" uid="uid://dvivwmws635p4" path="res://scripts/UI/safe_margin_container.gd" id="2_bgjg7"]
 [ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/buttons/language_select.gd" id="2_wswnh"]
 [ext_resource type="Script" uid="uid://cdc0fny7nvh6b" path="res://scripts/UI/audio_slider.gd" id="4_labj1"]
 [ext_resource type="Script" uid="uid://cps7wioglslib" path="res://scripts/UI/scale.gd" id="4_lwwgp"]
@@ -26,7 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=483158635]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=250601873]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,56 +40,70 @@ layout_mode = 2
 mouse_filter = 1
 theme_type_variation = &"TitleBar"
 
-[node name="Back" type="Button" parent="VBoxContainer/TitleBar" unique_id=1274558612]
+[node name="SafeMarginContainer" type="MarginContainer" parent="VBoxContainer/TitleBar" unique_id=1317703925]
+layout_mode = 2
+script = ExtResource("2_bgjg7")
+metadata/_custom_type_script = "uid://dvivwmws635p4"
+
+[node name="Back" type="Button" parent="VBoxContainer/TitleBar/SafeMarginContainer" unique_id=1274558612]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_type_variation = &"SettingsButton"
 text = "back"
 
-[node name="SettingsTitle" type="Label" parent="VBoxContainer/TitleBar" unique_id=1090065647]
+[node name="SettingsTitle" type="Label" parent="VBoxContainer/TitleBar/SafeMarginContainer" unique_id=1090065647]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"onPrimary"
 text = "settings"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1415752383]
+[node name="SafeMarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=2039474941]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_bgjg7")
+metadata/_custom_type_script = "uid://dvivwmws635p4"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer" unique_id=483158635]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer" unique_id=1415752383]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1941843611]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer" unique_id=1941843611]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GeneralTitle" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1237567989]
+[node name="GeneralTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1237567989]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "general"
 
-[node name="LanguageSelect" type="OptionButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=572866696]
+[node name="LanguageSelect" type="OptionButton" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=572866696]
 layout_mode = 2
 script = ExtResource("2_wswnh")
 
-[node name="DarknessControl" type="CheckButton" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2083268754]
+[node name="DarknessControl" type="CheckButton" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2083268754]
 layout_mode = 2
 button_pressed = true
 text = "dark_mode"
 script = ExtResource("1_05p07")
 
-[node name="Scale" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=436325367]
+[node name="Scale" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=436325367]
 layout_mode = 2
 script = ExtResource("4_lwwgp")
 
-[node name="ScaleLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Scale" unique_id=834119862]
+[node name="ScaleLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" unique_id=834119862]
 layout_mode = 2
 text = "scale"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Scale" unique_id=1192885068]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" unique_id=1192885068]
 layout_mode = 2
 
-[node name="ScaleSlider" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer" unique_id=987239133]
+[node name="ScaleSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer" unique_id=987239133]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -101,35 +116,35 @@ tick_count = 11
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="ApplyBtn" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer" unique_id=177189847]
+[node name="ApplyBtn" type="Button" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer" unique_id=177189847]
 layout_mode = 2
 theme_type_variation = &"SettingsButton"
 text = "apply"
 
-[node name="RendererTitle" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1063040783]
+[node name="RendererTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1063040783]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "game_renderer"
 
-[node name="WorldTitle" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1022692478]
+[node name="WorldTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1022692478]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "world"
 
-[node name="AudioTitle" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=568112349]
+[node name="AudioTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=568112349]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "audio"
 
-[node name="MasterVol" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1750526068]
+[node name="MasterVol" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1750526068]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MasterVol" unique_id=256419616]
+[node name="Label" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol" unique_id=256419616]
 layout_mode = 2
 text = "master_volume"
 vertical_alignment = 1
 
-[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/MasterVol" unique_id=1359081371]
+[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol" unique_id=1359081371]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -143,15 +158,15 @@ ticks_on_borders = true
 ticks_position = 3
 script = ExtResource("4_labj1")
 
-[node name="MusicVol" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2136819853]
+[node name="MusicVol" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2136819853]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MusicVol" unique_id=710018440]
+[node name="Label" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicVol" unique_id=710018440]
 layout_mode = 2
 text = "music_volume"
 vertical_alignment = 1
 
-[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/MusicVol" unique_id=1734483200]
+[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicVol" unique_id=1734483200]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -164,15 +179,15 @@ tick_count = 11
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="SfxVol" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1838575483]
+[node name="SfxVol" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1838575483]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/SfxVol" unique_id=570186090]
+[node name="Label" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SfxVol" unique_id=570186090]
 layout_mode = 2
 text = "sfx_volume"
 vertical_alignment = 1
 
-[node name="SfxVolSlider" type="HSlider" parent="VBoxContainer/ScrollContainer/VBoxContainer/SfxVol" unique_id=1194365636]
+[node name="SfxVolSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SfxVol" unique_id=1194365636]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -185,9 +200,9 @@ tick_count = 11
 ticks_on_borders = true
 ticks_position = 3
 
-[connection signal="pressed" from="VBoxContainer/TitleBar/Back" to="." method="_on_click_back"]
-[connection signal="item_selected" from="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]
-[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ScaleSlider" to="VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="change_scale"]
-[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ApplyBtn" to="VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="apply_scale"]
-[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/MusicVol/MusicVolSlider" to="VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_music_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/SfxVol/SfxVolSlider" to="VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_sfx_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TitleBar/SafeMarginContainer/Back" to="." method="_on_click_back"]
+[connection signal="item_selected" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ScaleSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="change_scale"]
+[connection signal="pressed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ApplyBtn" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="apply_scale"]
+[connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicVol/MusicVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_music_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SfxVol/SfxVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_sfx_value_changed"]
