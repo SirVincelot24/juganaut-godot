@@ -22,4 +22,5 @@ func play_music(key: String):
 
 func stop_all() -> void:
 	music.stop()
-	
+	for sound in sfx.values():
+		sound.stop()
