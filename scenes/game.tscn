@@ -129,9 +129,6 @@ scale = Vector2(0.1, 0.1)
 tile_set = ExtResource("4_lbhrr")
 script = ExtResource("5_iywne")
 
-[node name="Player" parent="Grid" unique_id=913245787 instance=ExtResource("6_p57ef")]
-position = Vector2(1370.0002, 740.00024)
-
 [node name="Rock" parent="Grid" unique_id=916694701 instance=ExtResource("6_p57ef")]
 position = Vector2(2090, 720)
 scale = Vector2(0.99999994, 0.99999994)
@@ -156,5 +153,7 @@ scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("7_u5sy4")
 type = 4
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=594041342]
+offset = Vector2(566, 307)
+
 [connection signal="game_over_signal" from="." to="Grid" method="game_over"]
-[connection signal="game_over_signal" from="." to="Grid/Player" method="on_game_over"]

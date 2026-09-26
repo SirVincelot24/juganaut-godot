@@ -7,8 +7,12 @@ func game_over(reason: String):
 
 func _ready():
 	set_process(true)
+	var world = WorldBuilder.new(self)
+	world.create_world(max_size, 1, Vector2i(5, 5))
 	for child in get_children():
 		set_cell(local_to_map(child.position), child.type, Vector2i.ZERO)
+	set_cell(Vector2i(0, 0), Pawn.CellType.DIRT, Vector2i.ZERO)
+	set_cell(max_size, Pawn.CellType.DIRT, Vector2i.ZERO)
 
 func get_cell_pawn(cell, type = Pawn.CellType.PLAYER):
 	for node in get_children():
