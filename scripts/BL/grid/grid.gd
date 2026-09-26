@@ -1,6 +1,7 @@
 extends TileMapLayer
 
 @export var max_size = Vector2i(10, 10)
+@export var player_pos = max_size / 2
 var world: WorldBuilder
 
 func game_over(reason: String):
@@ -18,10 +19,12 @@ func _ready():
 		Vector2i(1, 3),
 		Vector2i(1, 3),
 		Vector2i(1, 3),
-		Vector2i(5, 5))
+		player_pos)
 	$/root/Game.diamonds_in_game = world.diamonds_in_game
 	for child in get_children():
 		set_cell(local_to_map(child.position), child.type, Vector2i.ZERO)
+	
+	$/root/Game/Camera2D.position = $/root/Game.to_global(map_to_local(player_pos / 10))
 
 func get_cell_pawn(cell, type = Pawn.CellType.PLAYER):
 	for node in get_children():

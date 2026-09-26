@@ -57,19 +57,14 @@ func get_world_item(coord: Vector2i) -> Pawn.CellType:
 
 func set_world_item(coord: Vector2i, item: Pawn.CellType) -> void:
 	world[coord.x][coord.y] = item
-	print("placing %s at %s" % [Pawn.type_to_string(item), coord])
-	print(world)
 
 func place_items_on_grid():
 	var x = 0
 	var y = 0
 	print("placing items")
-	print(world)
 	for col in world:
-		print("col: ", col)
 		for item in col:
 			grid.set_cell(Vector2i(x, y), item, Vector2i.ZERO)
-			print(Pawn.type_to_string(item), Vector2i(x, y))
 			y+=1
 		y = 0
 		x+=1

@@ -128,6 +128,6 @@ tile_set = ExtResource("4_lbhrr")
 script = ExtResource("5_iywne")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=594041342]
-offset = Vector2(566, 307)
+offset = Vector2(0, 50)
 
 [connection signal="game_over_signal" from="." to="Grid" method="game_over"]
