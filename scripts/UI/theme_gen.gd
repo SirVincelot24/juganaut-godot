@@ -126,6 +126,39 @@ func define_theme():
 		hover_pressed = inherit(optionButtonPressed, almostTransparent)
 	})
 	
+	# Sliders
+	var slider_base = stylebox_flat({
+		corner_ = corner_radius(4),
+		corner_detail = 6,
+		content_margins_ = content_margins(4)
+	})
+	var tick_texture = DPITexture.create_from_string(
+		"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">\
+		<circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#%s\"/></svg>" % color_scheme.background.to_html(false),
+		0.4)
+	var grabber_texture = DPITexture.create_from_string(
+		'<svg xmlns="http://www.w3.org/2000/svg" width="10" height="40" fill="none">\
+		<rect width="10" height="40" rx="4" fill="#%s"/></svg>' % color_scheme.primary.to_html(false),
+	0.7)
+	var grabber_texture_highlight = DPITexture.create_from_string(
+		'<svg xmlns="http://www.w3.org/2000/svg" width="10" height="40" fill="none">\
+		<rect width="10" height="40" rx="4" fill="#%s"/></svg>' % Color(color_scheme.primary, 0.8).to_html(false),
+	0.7)
+	define_style("HSlider", {
+		slider = inherit(slider_base, {
+			bg_color = color_scheme.secondaryContainer
+		}),
+		grabber_area = inherit(slider_base, {
+			bg_color = color_scheme.primary
+		}),
+		grabber_area_highlight = inherit(slider_base, {
+			bg_color = Color(color_scheme.primary, 0.8)
+		}),
+		tick = tick_texture,
+		grabber = grabber_texture,
+		grabber_highlight = grabber_texture_highlight,
+	})
+	
 	# Containers
 	define_style("Panel", {
 		panel = stylebox_flat({
