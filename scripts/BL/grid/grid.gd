@@ -13,14 +13,16 @@ func _ready():
 	set_cell(Vector2i(0, 0), Pawn.CellType.DIRT, Vector2i.ZERO)
 	set_cell(max_size - Vector2i(1, 1), Pawn.CellType.DIRT, Vector2i.ZERO)
 	var diamonds: Vector2i = PlayerPrefs.get_vec2("diamonds")
-	print(diamonds)
+	var monsters: Vector2i = PlayerPrefs.get_vec2("monsters")
+	var bombs: Vector2i = PlayerPrefs.get_vec2("bombs")
+	var rocks: Vector2i = PlayerPrefs.get_vec2("rocks")
 	# build world
 	world = WorldBuilder.new(self, max_size)
 	world.create_world(max_size,
 		diamonds,
-		Vector2i(1, 3),
-		Vector2i(1, 3),
-		Vector2i(1, 3),
+		monsters,
+		bombs,
+		rocks,
 		player_pos)
 	$/root/Game.diamonds_in_game = world.diamonds_in_game
 	for child in get_children():

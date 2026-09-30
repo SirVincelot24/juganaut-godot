@@ -192,6 +192,48 @@ script = ExtResource("7_n35ux")
 range_min_size = 1
 metadata/_custom_type_script = "uid://cfsu1uxtv0yas"
 
+[node name="Monsters" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1973384780]
+layout_mode = 2
+text = "monster"
+
+[node name="MonstersLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=215426669]
+layout_mode = 2
+text = "20"
+
+[node name="MonstersSlider" type="Control" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1384990585]
+layout_mode = 2
+script = ExtResource("7_n35ux")
+range_min_size = 1
+metadata/_custom_type_script = "uid://cfsu1uxtv0yas"
+
+[node name="Bombs" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1073382432]
+layout_mode = 2
+text = "bombs"
+
+[node name="BombsLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=115444527]
+layout_mode = 2
+text = "20"
+
+[node name="BombsSlider" type="Control" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1651972869]
+layout_mode = 2
+script = ExtResource("7_n35ux")
+range_min_size = 1
+metadata/_custom_type_script = "uid://cfsu1uxtv0yas"
+
+[node name="Rocks" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=39148407]
+layout_mode = 2
+text = "rocks"
+
+[node name="RocksLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=445720751]
+layout_mode = 2
+text = "20"
+
+[node name="RocksSlider" type="Control" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1429900204]
+layout_mode = 2
+script = ExtResource("7_n35ux")
+range_min_size = 1
+metadata/_custom_type_script = "uid://cfsu1uxtv0yas"
+
 [node name="AudioTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=568112349]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
@@ -270,5 +312,8 @@ ticks_position = 3
 [connection signal="drag_ended" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/HeightSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_slider_drag_ended"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/HeightSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_height_changed"]
 [connection signal="changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/DiamondsSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_diamonds_changed"]
+[connection signal="changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/MonstersSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_monsters_changed"]
+[connection signal="changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/BombsSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_bombs_changed"]
+[connection signal="changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/RocksSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_rocks_changed"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicVol/MusicVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_music_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SfxVol/SfxVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_sfx_value_changed"]
