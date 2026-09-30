@@ -133,6 +133,65 @@ layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "world"
 
+[node name="WorldSettings" type="GridContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1261035232]
+layout_mode = 2
+columns = 3
+script = ExtResource("6_48ojb")
+
+[node name="Width" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=951775405]
+layout_mode = 2
+text = "width"
+
+[node name="WidthLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=1743900298]
+layout_mode = 2
+text = "20"
+
+[node name="WidthSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=819958593]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 5.0
+max_value = 50.0
+value = 20.0
+scrollable = false
+tick_count = 46
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Height" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=2001128237]
+layout_mode = 2
+text = "height"
+
+[node name="HeightLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=158539060]
+layout_mode = 2
+text = "20"
+
+[node name="HeightSlider" type="HSlider" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=959631427]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 5.0
+max_value = 50.0
+value = 20.0
+scrollable = false
+tick_count = 46
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Diamonds" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=893864691]
+layout_mode = 2
+text = "diamonds"
+
+[node name="DiamondsLabel" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=50265087]
+layout_mode = 2
+text = "20"
+
+[node name="DiamondsSlider" type="Control" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" unique_id=651984947]
+layout_mode = 2
+script = ExtResource("7_n35ux")
+range_min_size = 1
+metadata/_custom_type_script = "uid://cfsu1uxtv0yas"
+
 [node name="AudioTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=568112349]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
@@ -206,5 +265,10 @@ ticks_position = 3
 [connection signal="item_selected" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ScaleSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="change_scale"]
 [connection signal="pressed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ApplyBtn" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="apply_scale"]
+[connection signal="drag_ended" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/WidthSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_slider_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/WidthSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_width_changed"]
+[connection signal="drag_ended" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/HeightSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_slider_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/HeightSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_height_changed"]
+[connection signal="changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/DiamondsSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_diamonds_changed"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicVol/MusicVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_music_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SfxVol/SfxVolSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MasterVol/MasterVolSlider" method="_sfx_value_changed"]
