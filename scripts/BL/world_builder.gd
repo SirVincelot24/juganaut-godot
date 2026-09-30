@@ -71,6 +71,7 @@ func place_items_on_grid():
 
 func create_items(world_size: Vector2i, item_count_range: Vector2i, player_coord: Vector2i, item: Pawn.CellType):
 	var item_count = randi_range(item_count_range.x, item_count_range.y)
+	print(item_count, " of type ", item, " from range ", item_count_range)
 	if item == Pawn.CellType.DIAMOND:
 		diamonds_in_game = item_count
 	for i in range(item_count):

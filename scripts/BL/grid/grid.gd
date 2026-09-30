@@ -1,7 +1,7 @@
 extends TileMapLayer
 
-@export var max_size = Vector2i(10, 10)
-@export var player_pos = max_size / 2
+@onready var max_size = Vector2i(PlayerPrefs.get_vec2("world_size", Vector2(10, 10)))
+@onready var player_pos = max_size / 2
 var world: WorldBuilder
 
 func game_over(reason: String):
@@ -12,10 +12,12 @@ func _ready():
 	# mark borders with dirt
 	set_cell(Vector2i(0, 0), Pawn.CellType.DIRT, Vector2i.ZERO)
 	set_cell(max_size - Vector2i(1, 1), Pawn.CellType.DIRT, Vector2i.ZERO)
+	var diamonds: Vector2i = PlayerPrefs.get_vec2("diamonds")
+	print(diamonds)
 	# build world
 	world = WorldBuilder.new(self, max_size)
 	world.create_world(max_size,
-		Vector2i(1, 3),
+		diamonds,
 		Vector2i(1, 3),
 		Vector2i(1, 3),
 		Vector2i(1, 3),
