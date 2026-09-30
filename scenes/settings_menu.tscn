@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dba1acnnlnyqw"]
 
-[ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/buttons/dark_button.gd" id="1_05p07"]
-[ext_resource type="Script" uid="uid://bkiqvqjv1q6kr" path="res://scripts/UI/settings_menu.gd" id="1_lwwgp"]
+[ext_resource type="Script" uid="uid://dd4mu46yxw0bf" path="res://scripts/UI/settings_menu/dark_button.gd" id="1_05p07"]
+[ext_resource type="Script" uid="uid://bkiqvqjv1q6kr" path="res://scripts/UI/settings_menu/settings_menu.gd" id="1_lwwgp"]
 [ext_resource type="Script" uid="uid://dvivwmws635p4" path="res://scripts/UI/safe_margin_container.gd" id="2_bgjg7"]
-[ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/buttons/language_select.gd" id="2_wswnh"]
-[ext_resource type="Script" uid="uid://cdc0fny7nvh6b" path="res://scripts/UI/audio_slider.gd" id="4_labj1"]
-[ext_resource type="Script" uid="uid://cps7wioglslib" path="res://scripts/UI/scale.gd" id="4_lwwgp"]
+[ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/settings_menu/language_select.gd" id="2_wswnh"]
+[ext_resource type="Script" uid="uid://cdc0fny7nvh6b" path="res://scripts/UI/settings_menu/audio_slider.gd" id="4_labj1"]
+[ext_resource type="Script" uid="uid://cps7wioglslib" path="res://scripts/UI/settings_menu/scale.gd" id="4_lwwgp"]
+[ext_resource type="Script" uid="uid://c7df06ufwvxp7" path="res://scripts/UI/settings_menu/world_settings.gd" id="6_48ojb"]
+[ext_resource type="Script" uid="uid://cfsu1uxtv0yas" path="res://scripts/UI/range_slider.gd" id="7_n35ux"]
 
 [node name="SettingsMenu" type="Control" unique_id=1464940150]
 z_index = 1

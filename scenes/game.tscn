@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bm6str7jj6mkt" path="res://scripts/game.gd" id="1_lbhrr"]
 [ext_resource type="Script" uid="uid://dvivwmws635p4" path="res://scripts/UI/safe_margin_container.gd" id="2_iywne"]
-[ext_resource type="Script" uid="uid://dtrqkrbtuigau" path="res://scripts/UI/buttons/stop.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://dtrqkrbtuigau" path="res://scripts/UI/stop.gd" id="2_yqjtg"]
 [ext_resource type="TileSet" uid="uid://dqblh7oy70qbd" path="res://tiles/grid_tiles.tres" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://bslvuad7i0m1y" path="res://scripts/BL/grid/grid.gd" id="5_iywne"]
 
