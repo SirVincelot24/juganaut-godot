@@ -14,6 +14,13 @@ var monsters: Vector2
 var bombs: Vector2
 var rocks: Vector2
 
+class WorldDefaults:
+	const world_size: Vector2 = Vector2(20, 20)
+	const diamonds: Vector2 = Vector2(10, 30)
+	const monsters: Vector2 = Vector2(20, 50)
+	const bombs: Vector2 = Vector2(10, 20)
+	const rocks: Vector2 = Vector2(20, 50)
+
 func _on_width_changed(value: float) -> void:
 	width_label.text = str(int(value))
 	width = value
@@ -49,15 +56,17 @@ func _on_rocks_changed(range_begin: int, range_end: int) -> void:
 	rocks = Vector2(range_begin, range_end)
 	PlayerPrefs.set_pref("rocks", rocks)
 
-func _ready() -> void:
-	var world_size = PlayerPrefs.get_vec2("world_size", Vector2(10, 10))
-	var _diamonds: Vector2 = PlayerPrefs.get_vec2("diamonds", Vector2(10, 20))
+func set_settings(world_size: Vector2,
+		_diamonds: Vector2,
+		_monsters: Vector2,
+		_bombs: Vector2,
+		_rocks: Vector2
+	) -> void:
+	_on_width_changed(world_size.x)
+	_on_height_changed(world_size.y)
 	_on_diamonds_changed(_diamonds.x, _diamonds.y)
-	var _monsters: Vector2 = PlayerPrefs.get_vec2("monsters", Vector2(10, 20))
 	_on_monsters_changed(_monsters.x, _monsters.y)
-	var _bombs: Vector2 = PlayerPrefs.get_vec2("bombs", Vector2(10, 20))
 	_on_bombs_changed(_bombs.x, _bombs.y)
-	var _rocks: Vector2 = PlayerPrefs.get_vec2("rocks", Vector2(10, 20))
 	_on_rocks_changed(_rocks.x, _rocks.y)
 	$WidthSlider.value = world_size.x
 	$HeightSlider.value = world_size.y
@@ -69,3 +78,20 @@ func _ready() -> void:
 	$BombsSlider.range_end = _bombs.y
 	$RocksSlider.range_begin = _rocks.x
 	$RocksSlider.range_end = _rocks.y
+
+func _ready() -> void:
+	var world_size = PlayerPrefs.get_vec2("world_size", WorldDefaults.world_size)
+	var _diamonds: Vector2 = PlayerPrefs.get_vec2("diamonds", WorldDefaults.diamonds)
+	var _monsters: Vector2 = PlayerPrefs.get_vec2("monsters", WorldDefaults.monsters)
+	var _bombs: Vector2 = PlayerPrefs.get_vec2("bombs", WorldDefaults.bombs)
+	var _rocks: Vector2 = PlayerPrefs.get_vec2("rocks", WorldDefaults.rocks)
+	set_settings(world_size, _diamonds, _monsters, _bombs, _rocks)
+
+func _on_reset_button_pressed() -> void:
+	set_settings(
+		WorldDefaults.world_size,
+		WorldDefaults.diamonds,
+		WorldDefaults.monsters,
+		WorldDefaults.bombs,
+		WorldDefaults.rocks
+	)

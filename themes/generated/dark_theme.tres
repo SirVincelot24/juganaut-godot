@@ -285,21 +285,9 @@ corner_radius_bottom_left = 10
 content_margin_top = 50.0
 content_margin_bottom = 20.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28pxk"]
-content_margin_left = 10.0
-content_margin_top = 5.0
-content_margin_right = 10.0
-content_margin_bottom = 5.0
-bg_color = Color(0.13725491, 0.3137255, 0.14117648, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28pxk"]
+content_margin_top = 50.0
+content_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_842js"]
 content_margin_left = 10.0
@@ -322,7 +310,7 @@ content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color(0.13725491, 0.3137255, 0.14117648, 0.9)
+bg_color = Color(0.13725491, 0.3137255, 0.14117648, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -338,7 +326,12 @@ content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color(0.7254902, 0.8, 0.7058824, 1)
+bg_color = Color(0.13725491, 0.3137255, 0.14117648, 0.9)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -360,19 +353,30 @@ content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color(0.7254902, 0.8, 0.7058824, 0.9)
+bg_color = Color(0.7254902, 0.8, 0.7058824, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s64l"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.7254902, 0.8, 0.7058824, 0.9)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctvjn"]
 bg_color = Color(0.627451, 0.827451, 0.6039216, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctvjn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7l42"]
 content_margin_top = 10.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7l42"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h00bu"]
 bg_color = Color(0.10980392, 0.12941177, 0.105882354, 1)
 
 [resource]
@@ -428,29 +432,33 @@ SettingsButton/styles/pressed = SubResource("StyleBoxFlat_1g565")
 SettingsHeadline/base_type = &"Label"
 SettingsHeadline/colors/font_color = Color(0.7372549, 0.92156863, 0.94509804, 1)
 SettingsHeadline/styles/normal = SubResource("StyleBoxEmpty_jub0h")
+SettingsHeadlineNoMargin/base_type = &"Label"
+SettingsHeadlineNoMargin/colors/font_color = Color(0.7372549, 0.92156863, 0.94509804, 1)
+SettingsTitleContainer/base_type = &"PanelContainer"
+SettingsTitleContainer/styles/panel = SubResource("StyleBoxEmpty_28pxk")
 StartButton/base_type = &"Button"
 StartButton/colors/font_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
 StartButton/colors/font_pressed_color = Color(0.7372549, 0.9411765, 0.70980394, 1)
-StartButton/styles/hover = SubResource("StyleBoxFlat_28pxk")
-StartButton/styles/normal = SubResource("StyleBoxFlat_842js")
-StartButton/styles/pressed = SubResource("StyleBoxFlat_oyryx")
+StartButton/styles/hover = SubResource("StyleBoxFlat_842js")
+StartButton/styles/normal = SubResource("StyleBoxFlat_oyryx")
+StartButton/styles/pressed = SubResource("StyleBoxFlat_u70g8")
 StopButton/base_type = &"Button"
 StopButton/colors/font_color = Color(0.14509805, 0.20392157, 0.13725491, 1)
 StopButton/colors/font_hover_color = Color(0.0627451, 0.078431375, 0.05882353, 1)
 StopButton/colors/font_hover_pressed_color = Color(0.0627451, 0.078431375, 0.05882353, 1)
 StopButton/colors/font_pressed_color = Color(0.14509805, 0.20392157, 0.13725491, 1)
-StopButton/styles/hover = SubResource("StyleBoxFlat_u70g8")
-StopButton/styles/normal = SubResource("StyleBoxFlat_qk30i")
-StopButton/styles/pressed = SubResource("StyleBoxFlat_duuvf")
+StopButton/styles/hover = SubResource("StyleBoxFlat_qk30i")
+StopButton/styles/normal = SubResource("StyleBoxFlat_duuvf")
+StopButton/styles/pressed = SubResource("StyleBoxFlat_6s64l")
 TitleBar/base_type = &"PanelContainer"
-TitleBar/styles/panel = SubResource("StyleBoxFlat_6s64l")
+TitleBar/styles/panel = SubResource("StyleBoxFlat_ctvjn")
 TitleLabel/base_type = &"Label"
 TitleLabel/colors/font_color = Color(1, 0, 0.5, 1)
 TitleLabel/colors/font_outline_color = Color(1, 0, 0.5, 1)
 TitleLabel/constants/outline_size = 5
 TitleLabel/font_sizes/font_size = 60
-TitleLabel/styles/normal = SubResource("StyleBoxEmpty_ctvjn")
+TitleLabel/styles/normal = SubResource("StyleBoxEmpty_f7l42")
 TopBar/base_type = &"PanelContainer"
-TopBar/styles/panel = SubResource("StyleBoxFlat_f7l42")
+TopBar/styles/panel = SubResource("StyleBoxFlat_h00bu")
 onPrimary/base_type = &"Label"
 onPrimary/colors/font_color = Color(0.03529412, 0.22352941, 0.0627451, 1)

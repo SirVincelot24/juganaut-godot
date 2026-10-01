@@ -1,8 +1,8 @@
 @tool
 extends ProgrammaticTheme
 
-var LIGHT_THEME = load("res://scripts/UI/light_theme.gd").new()
-var DARK_THEME = load("res://scripts/UI/dark_theme.gd").new()
+var LIGHT_THEME = load("res://scripts/UI/styling/light_theme.gd").new()
+var DARK_THEME = load("res://scripts/UI/styling/dark_theme.gd").new()
 
 var default_font_size = 30
 var color_scheme: ColorScheme
@@ -61,6 +61,10 @@ func define_theme():
 	for entry in buttonBgVariations.keys():
 		button_pressed[entry] = inherit(buttonBgVariations[entry], {
 			bg_color = Color(buttonBgVariations[entry].bg_color, 0.9)
+		})
+	
+	var settings_headline_style = stylebox_empty({
+			content_margins_ = content_margins(-1, 50, -1, 20)
 		})
 	
 	define_default_font_size(default_font_size)
@@ -193,6 +197,9 @@ func define_theme():
 			bg_color = color_scheme.tertiaryContainer
 		})
 	})
+	define_variant_style("SettingsTitleContainer", "PanelContainer", {
+		panel = settings_headline_style
+	})
 	
 	# Labels
 	define_style("Label", {
@@ -212,7 +219,8 @@ func define_theme():
 	})
 	define_variant_style("SettingsHeadline", "Label", {
 		font_color = color_scheme.onTertiaryContainer,
-		normal = stylebox_empty({
-			content_margins_ = content_margins(-1, 50, -1, 20)
-		})
+		normal = settings_headline_style
+	})
+	define_variant_style("SettingsHeadlineNoMargin", "Label", {
+		font_color = color_scheme.onTertiaryContainer,
 	})
