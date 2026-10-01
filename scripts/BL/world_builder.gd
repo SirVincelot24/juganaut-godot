@@ -37,6 +37,7 @@ func create_world(world_size: Vector2i,
 	create_items(world_size, monster_count_range, player_coord, Pawn.CellType.MONSTER)
 	create_items(world_size, bomb_count_range, player_coord, Pawn.CellType.BOMB)
 	create_items(world_size, diamond_count_range, player_coord, Pawn.CellType.DIAMOND)
+	player.name = "Player"
 	player.position = grid.map_to_local(player_coord)
 	grid.add_child(player)
 	var next_to_player = [
