@@ -9,6 +9,7 @@ light,Light,Hell
 dark_mode,Dark Mode,Dunkler Modus
 system,System,System
 game_renderer,Game Renderer,Spiel-Renderer
+follow_player,Camera follows Player,Kamera folgt dem Spieler
 scale,Scale,Skalierung
 automatic,Automatic,Automatisch
 scale_factor,Scale Factor,Skalierungs-Faktor

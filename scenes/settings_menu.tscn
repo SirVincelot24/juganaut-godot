@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://3uok607cgyja" path="res://scripts/UI/settings_menu/language_select.gd" id="2_wswnh"]
 [ext_resource type="Script" uid="uid://cdc0fny7nvh6b" path="res://scripts/UI/settings_menu/audio_slider.gd" id="4_labj1"]
 [ext_resource type="Script" uid="uid://cps7wioglslib" path="res://scripts/UI/settings_menu/scale.gd" id="4_lwwgp"]
+[ext_resource type="Script" uid="uid://dw8hhbevrqnj2" path="res://scripts/UI/settings_menu/renderer_settings.gd" id="6_2ctot"]
 [ext_resource type="Script" uid="uid://c7df06ufwvxp7" path="res://scripts/UI/settings_menu/world_settings.gd" id="6_48ojb"]
 [ext_resource type="Texture2D" uid="uid://dfx47i7jg1u8" path="res://textures/reset_settings.svg" id="6_fb6cq"]
 [ext_resource type="Script" uid="uid://cfsu1uxtv0yas" path="res://scripts/UI/range_slider.gd" id="7_n35ux"]
@@ -124,10 +125,18 @@ layout_mode = 2
 theme_type_variation = &"SettingsButton"
 text = "apply"
 
-[node name="RendererTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1063040783]
+[node name="RendererSettings" type="VBoxContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1349956425]
+layout_mode = 2
+script = ExtResource("6_2ctot")
+
+[node name="RendererTitle" type="Label" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/RendererSettings" unique_id=1063040783]
 layout_mode = 2
 theme_type_variation = &"SettingsHeadline"
 text = "game_renderer"
+
+[node name="FollowPlayerBtn" type="CheckButton" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/RendererSettings" unique_id=66151568]
+layout_mode = 2
+text = "follow_player"
 
 [node name="WorldTitleContainer" type="PanelContainer" parent="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=25068254]
 layout_mode = 2
@@ -319,6 +328,7 @@ ticks_position = 3
 [connection signal="item_selected" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/LanguageSelect" method="_item_selected"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ScaleSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="change_scale"]
 [connection signal="pressed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale/HBoxContainer/ApplyBtn" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Scale" method="apply_scale"]
+[connection signal="toggled" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/RendererSettings/FollowPlayerBtn" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/RendererSettings" method="_on_follow_player_btn_toggled"]
 [connection signal="pressed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldTitleContainer/ResetButton" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_reset_button_pressed"]
 [connection signal="drag_ended" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/WidthSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_slider_drag_ended"]
 [connection signal="value_changed" from="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings/WidthSlider" to="VBoxContainer/SafeMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WorldSettings" method="_on_width_changed"]

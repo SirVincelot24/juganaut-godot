@@ -2,7 +2,9 @@ extends TileMapLayer
 
 @onready var max_size = Vector2i(PlayerPrefs.get_vec2("world_size", Vector2(10, 10)))
 @onready var player_pos = max_size / 2
+var center: Vector2
 var world: WorldBuilder
+@onready var follow_player = PlayerPrefs.get_bool("follow_player", true)
 
 func game_over(reason: String):
 	set_process(false)
@@ -28,8 +30,16 @@ func _ready():
 	for child in get_children():
 		set_cell(local_to_map(child.position), child.type, Vector2i.ZERO)
 	
-	position = (-$/root/Game.to_global(map_to_local(max_size) / 10) / 2)
+	center = $/root/Game.to_global(map_to_local(max_size) / 10) / 2
+	
+	position = -center
 	$/root/Game/Camera2D.offset = -Vector2(0, $/root/Game/UI/Control/TopBar.size.y)
+	
+	$Player.player_moved.connect(_on_player_moved)
+
+func _on_player_moved(target_pos: Vector2) -> void:
+	if follow_player:
+		$/root/Game/Camera2D.position = $/root/Game.to_global(target_pos / 10) - center 
 
 func get_cell_pawn(cell, type = Pawn.CellType.PLAYER):
 	for node in get_children():
@@ -66,6 +76,6 @@ func request_move(pawn, direction: Vector2i):
 			set_cell(cell_start, -1, Vector2i.ZERO)
 		_:
 			var target_pawn = get_cell_pawn(cell_target, cell_tile_id)
-			if target_pawn == null:
+			if target_pawn == null or !is_instance_of(target_pawn, Pawn):
 				print("invalid pawn at", cell_target)
 			print("Cell %s contains %s" % [cell_target, target_pawn.name])
