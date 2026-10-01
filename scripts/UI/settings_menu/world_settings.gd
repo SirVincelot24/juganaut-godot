@@ -29,7 +29,7 @@ func _on_height_changed(value: float) -> void:
 	height_label.text = str(int(value))
 	height = value
 
-func _on_slider_drag_ended(value_changed: bool) -> void:
+func _on_slider_drag_ended(_value_changed: bool) -> void:
 	PlayerPrefs.set_pref("world_size", Vector2(width, height))
 	PlayerPrefs.set_pref("diamonds", diamonds)
 	PlayerPrefs.set_pref("monsters", monsters)
@@ -68,6 +68,7 @@ func set_settings(world_size: Vector2,
 	_on_monsters_changed(_monsters.x, _monsters.y)
 	_on_bombs_changed(_bombs.x, _bombs.y)
 	_on_rocks_changed(_rocks.x, _rocks.y)
+	_on_slider_drag_ended(true)
 	$WidthSlider.value = world_size.x
 	$HeightSlider.value = world_size.y
 	$DiamondsSlider.range_begin = _diamonds.x

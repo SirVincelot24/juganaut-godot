@@ -61,7 +61,7 @@ func set_world_item(coord: Vector2i, item: Pawn.CellType) -> void:
 func place_items_on_grid():
 	var x = 0
 	var y = 0
-	print("placing items")
+	print("placing items in world of size ", size)
 	for col in world:
 		for item in col:
 			grid.set_cell(Vector2i(x, y), item, Vector2i.ZERO)
