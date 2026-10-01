@@ -6,6 +6,8 @@ var isTouch = false
 var walk_animation_time = .5
 var touchPos
 
+signal player_moved
+
 func on_game_over(reason: String):
 	queue_free()
 
@@ -56,6 +58,7 @@ func move_to(target_pos):
 	tween.set_ease(Tween.EASE_IN)
 	var end = $Pivot.position + move_direction * grid_size
 	tween.tween_property($Pivot, "position", end, walk_animation_time)
+	player_moved.emit(target_pos)
 	
 	await tween.finished
 	$Pivot.position = Vector2.ZERO
