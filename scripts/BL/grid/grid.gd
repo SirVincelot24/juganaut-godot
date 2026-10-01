@@ -29,7 +29,7 @@ func _ready():
 		set_cell(local_to_map(child.position), child.type, Vector2i.ZERO)
 	
 	position = (-$/root/Game.to_global(map_to_local(max_size) / 10) / 2)
-	$/root/Game/Camera2D.position -= Vector2(0, $/root/Game/UI/Control/TopBar.size.y)
+	$/root/Game/Camera2D.offset = -Vector2(0, $/root/Game/UI/Control/TopBar.size.y)
 
 func get_cell_pawn(cell, type = Pawn.CellType.PLAYER):
 	for node in get_children():
